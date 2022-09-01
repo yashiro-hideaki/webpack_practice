@@ -24,6 +24,29 @@ module.exports = {
                         loader: 'css-loader',
                     }
                 ]
+            },
+            // {
+            //     test: /\.png/,
+            //     use: [
+            //         {
+            //             loader:'url-loader',
+            //             options:{
+            //                 esModule:false
+            //             }
+            //         }
+            //     ]
+            // }
+            {
+                test: /\.(png|jpg)/,
+                use: [
+                    {
+                        loader:'file-loader',
+                        options:{
+                            esModule:false,
+                            name:'images/[name].[ext]'
+                        }
+                    }
+                ]
             }
         ]
     },
